@@ -1,0 +1,9 @@
+flowchart LR
+    user[Messenger user] --> page[Facebook Page]
+    page --> meta[Meta Webhooks]
+    meta --> api[FastAPI /webhook]
+    api --> sig[Signature verification]
+    sig --> db[(SQLite)]
+    sig --> rules[Reply Engine]
+    rules --> send[Meta Send API]
+    send --> page
